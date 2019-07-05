@@ -34,6 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
+// @ts-ignore
 var router = require('koa-router')();
 router.get('/', function (ctx, next) { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {

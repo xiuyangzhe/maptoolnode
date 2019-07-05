@@ -20,6 +20,7 @@ app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
 app.use(require("koa-static")(__dirname + "/dist"));
+app.use(require("koa-static")(__dirname + "/maptool"));
 
 app.use(views(__dirname + "/views", {
     extension: "html"
