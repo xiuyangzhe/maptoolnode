@@ -9,6 +9,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
+import {fromLonLat} from 'ol/proj';
 
 const mapdiv = document.getElementById('mapdiv');
 const map = new Map({
@@ -21,8 +22,9 @@ const map = new Map({
         })
     ],
     view: new View({
-        center: [120,30],
-        zoom: 1
+        center: fromLonLat([120, 30]),
+        zoom: 10,
+        minZom:6
     })
 });
 
