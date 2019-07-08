@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
+    "devweb":"webpack-dev-server --open --config config/webpack.config.dev.js",
+    "dev": "concurrently \"yarn start\" \"yarn devweb\" ",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack.config.js --watch"
+    "build": "webpack --config config/webpack.config.pro.js"
   },
   "dependencies": {
     "debug": "^4.1.1",
@@ -23,7 +24,8 @@
     "ol": "^5.3.3",
     "pug": "^2.0.3",
     "ts-loader": "^6.0.4",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
     "@types/koa": "^2.0.49",
