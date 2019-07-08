@@ -1,10 +1,35 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
+    "outDir": "./dist",// 打包到的目录
+    "sourceMap": true,// 是否生成sourceMap（用于浏览器调试）
+    "noImplicitAny": false,
+    "noUnusedLocals": false, // 是否提示未定义报错
+    "noUnusedParameters": false, // 是否提示未定义报错
+    "declaration": true,// 是否生成声明文件
+    "declarationDir": "./dist/types/",// 声明文件打包的位置
+    "declarationMap": true,// 是否生成声明文件map文件（便于调试）
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",// 转化成的目标语言
+    "baseUrl": "./",
+    "types": [
+      "node",
+    ],
+    "typeRoots": [
+      "./node_modules/*"
+    ],
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "allowJs": false
   },
+  "include": [
+    "src/**/*.ts",
+  ],// 要打包的文件
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "*.test.ts"
   ]
 }

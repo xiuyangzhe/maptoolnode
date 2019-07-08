@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var startapp = require('./app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 
@@ -19,7 +19,7 @@ var port = normalizePort(process.env.PORT || '3000');
  * Create HTTP server.
  */
 
-var server = http.createServer(app.callback());
+var server = http.createServer(startapp.callback());
 
 /**
  * Listen on provided port, on all network interfaces.

@@ -15,7 +15,7 @@ const mousePositionControl = new MousePosition({
     // be placed within the map.
     className: 'custom-mouse-position',
     target: document.getElementById('mouse-position'),
-    undefinedHTML: '&nbsp;'
+    undefinedHTML: '&nbsp;',
 });
 
 const projectionSelect = document.getElementById('projection');
@@ -37,13 +37,13 @@ const map = new Map({
     layers: [
         new TileLayer({
             source: new XYZ({
-                url: '/mapdata/{z}/{x}/{y}.png'
-            })
-        })
+                url: '/mapdata/{z}/{x}/{y}.png',
+            }),
+        }),
     ],
     view: new View({
         center: fromLonLat([120, 30]),
         zoom: 10,
-        minZom:7
-    })
+        minZom: 7,
+    }),
 });

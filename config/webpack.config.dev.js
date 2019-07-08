@@ -1,12 +1,22 @@
 const webpack = require("webpack");
 const path = require('path');
-
+const  HtmlWebPackPlugin= require('html-webpack-plugin');
 module.exports = {
     entry: ['./src/index.ts'],
-    //entry: './app.ts',
     devtool: 'inline-source-map',
     module: {
         rules: [
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: {
+                            attrs: ["img:src"]
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
@@ -29,8 +39,8 @@ module.exports = {
         overlay: true, // 如果代码出错，会在浏览器页面弹出“浮动层”。类似于 vue-cli 等脚手架
         proxy: {
             // 跨域代理转发
-            "/comments": {
-                target: "https://127.0.0.1:3000",
+            "/mapdata": {
+                target: "http://localhost:3000",
                 changeOrigin: true,
                 logLevel: "debug",
                 headers: {
@@ -40,10 +50,14 @@ module.exports = {
         },
         historyApiFallback: {
             // HTML5 history模式
-            rewrites: [{ from: /.*/, to: "/index.html" }]
+            rewrites: [{ from: /.*/, to: "/views/index.html" }]
         }
     },
     plugins: [
+        new HtmlWebPackPlugin({
+            template: './views/index.html',
+            filename: './index.html'
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
     ]
