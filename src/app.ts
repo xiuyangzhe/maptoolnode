@@ -19,7 +19,6 @@ koaapp.use(bodyparser({
 koaapp.use(json());
 koaapp.use(logger());
 koaapp.use(require("koa-static")(__dirname + "/../public"));
-koaapp.use(require("koa-static")(__dirname + "/../dist"));
 koaapp.use(require("koa-static")(__dirname + "/../maptool"));
 
 koaapp.use(views(__dirname + "./../views", {

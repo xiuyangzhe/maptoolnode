@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "startserver": "ts-node serversrc/startserver.ts",
-    "startdevserver": "nodemon",
-    "devweb": "webpack-dev-server --open --config config/webpack.config.dev.js",
-    "dev": "concurrently \"yarn startserver\" \"yarn devweb\" ",
-    "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack.config.pro.js"
+    "startserver": "ts-node src/startserver.ts",
+    "start": "nodemon"
   },
   "dependencies": {
     "@types/chai": "^4.1.7",
