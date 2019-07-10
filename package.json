@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "startserver": "ts-node src/startserver.ts",
-    "start": "nodemon"
+    "start": "nodemon",
+    "debug": "node --inspect-brk=5858 ./node_modules/.bin/nodemon"
   },
   "dependencies": {
     "@types/chai": "^4.1.7",
@@ -15,6 +16,7 @@
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
+    "global": "^4.4.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "koa": "^2.7.0",
@@ -29,6 +31,7 @@
     "mocha": "^6.1.4",
     "ol": "^5.3.3",
     "pug": "^2.0.3",
+    "request": "^2.88.0",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "webpack-cli": "^3.3.5",
