@@ -2,7 +2,8 @@
 
 class MapTool {
     private httputil = require('./http');
-    private mapUrl: string = 'http://mt2.google.cn/vt/lyrs=m@167000000&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}&s=Galil';
+    private mapUrl: string = 'http://webrd01.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scale=1&style=8';
+    // 'http://mt2.google.cn/vt/lyrs=m@167000000&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}&s=Galil';
     private fs = require('fs');
     private path = require('path');
     private util = require('util');
