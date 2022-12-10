@@ -14,7 +14,7 @@
     "babelify": "^10.0.0",
     "chai": "^4.2.0",
     "debug": "^4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "file-loader": "^4.0.0",
     "global": "^4.4.0",
     "html-loader": "^0.5.5",
